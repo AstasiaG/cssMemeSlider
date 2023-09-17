@@ -22,6 +22,7 @@ body {
 
 .image {
   width: 100%;
+  height: 22rem;
   border-radius: 1rem;
   box-shadow: 0px 5px 0px 0px rgba(28, 31, 32, 0.85);
 }
@@ -36,21 +37,58 @@ body {
   display: flex;
   flex-direction: row-reverse;
   align-items: last baseline;
+  transform: translate(2rem);
 }
 
 .meme__text {
   color: white;
+  width: 60%;
 }
 
 input {
   cursor: pointer;
 }
 
+.nav__dot {
+  -webkit-appearance: none;
+  width: 0.9rem;
+  height: 0.9rem;
+  transform: translate(-15rem, 0.3rem);
+  border-radius: 50%;
+  padding: 0.5rem;
+  background-color: cadetblue;
+  border: 0.3rem solid #24282A;
+}
 
-#dot1:checked ~ .content#meme1,
-.dots #dot2:checked .content#meme2,
-.dots #dot3:checked ~ .content#meme3,
-.dots #dot4:checked ~ .content#meme4,
-.dots #dot5:checked ~ .content#meme5 {
+.nav__dot:hover {
+  background-color: beige;
+  transition: all 0.2s ease-in-out;
+}
+
+.dot {
+  display: block;
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: #24282A;
+  background-clip: padding-box;
+  border-radius: 50%;
+  transform: translate(-7.93rem, -0.14rem);
+  opacity: 0;
+  margin-left: 0.9rem;
+}
+
+#dot1:checked ~ #nav1,
+#dot2:checked ~ #nav2,
+#dot3:checked ~ #nav3,
+#dot4:checked ~ #nav4,
+#dot5:checked ~ #nav5 {
+  opacity: 1;
+}
+
+#dot5:checked ~ .content#meme1,
+#dot4:checked ~ .content#meme2,
+#dot3:checked ~ .content#meme3,
+#dot2:checked ~ .content#meme4,
+#dot1:checked ~ .content#meme5 {
   display: flex;
 }
