@@ -27,7 +27,13 @@ body {
   
   object-fit: cover;
   border-radius: 1rem;
-  box-shadow: 0px 5px 0px 0px rgba(28, 31, 32, 0.85);
+  box-shadow: 0 0.3rem 0 0 rgba(28, 31, 32, 0.85);
+  animation: 0.2s img ease-in;
+}
+
+@keyframes img {
+  from { transform: translate(20rem); }
+  to { transform: translate(0); }
 }
 
 .content {
@@ -45,11 +51,17 @@ body {
 
 .meme__text {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 0.5rem;
   font-size: 1rem;
   color: white;
   width: 60%;
   vertical-align: top;
+  overflow: hidden;
+  animation: 0.1s text ease-in;
+}
+
+@keyframes text {
+  from { transform: translate(5rem); opacity: 0; }
+  to { transform: translate(0); opacity: 1;}
 }
 
 input {
