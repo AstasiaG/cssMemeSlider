@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #24282A;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.image {
+  border-radius: 15px;
+  box-shadow: 0px 5px 0px 0px rgba(28, 31, 32, 0.85);
+}
+
+.content {
+  height: 650px;
+  position: absolute;
+  top: 20px;
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.meme__text {
+  color: white;
+}
+
+.nav__dot {
+  margin-top: 620px;
+  margin-left: 5px;
+}
+
+.dots #dot1:checked ~ .content#meme1,
+.dots #dot2:checked ~ .content#meme2,
+.dots #dot3:checked ~ .content#meme3,
+.dots #dot4:checked ~ .content#meme4,
+.dots #dot5:checked ~ .content#meme5 {
+  display: flex;
+}
