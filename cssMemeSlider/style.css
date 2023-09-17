@@ -13,6 +13,7 @@ body {
   align-items: flex-end;
   padding: 2rem;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .dots {
@@ -22,7 +23,9 @@ body {
 
 .image {
   width: 100%;
-  height: 22rem;
+  height: 100%;
+  
+  object-fit: cover;
   border-radius: 1rem;
   box-shadow: 0px 5px 0px 0px rgba(28, 31, 32, 0.85);
 }
@@ -37,12 +40,16 @@ body {
   display: flex;
   flex-direction: row-reverse;
   align-items: last baseline;
-  transform: translate(2rem);
+  transform: translate(7.7rem);
 }
 
 .meme__text {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 0.5rem;
+  font-size: 1rem;
   color: white;
   width: 60%;
+  vertical-align: top;
 }
 
 input {
@@ -51,13 +58,13 @@ input {
 
 .nav__dot {
   -webkit-appearance: none;
-  width: 0.9rem;
-  height: 0.9rem;
-  transform: translate(-15rem, 0.3rem);
+  width: 1rem;
+  height: 1rem;
+  transform: translate(-15rem, 0.45rem);
   border-radius: 50%;
-  padding: 0.5rem;
+  padding: 0.4rem;
   background-color: cadetblue;
-  border: 0.3rem solid #24282A;
+  border: 0.4rem solid #24282A;
 }
 
 .nav__dot:hover {
@@ -65,16 +72,22 @@ input {
   transition: all 0.2s ease-in-out;
 }
 
+.image__container {
+  max-width: 47rem;
+  min-width: 47rem;
+  height: 51vh;
+}
+
 .dot {
   display: block;
-  width: 0.6rem;
-  height: 0.6rem;
+  width: 0.5rem;
+  height: 0.5rem;
   background-color: #24282A;
   background-clip: padding-box;
   border-radius: 50%;
-  transform: translate(-7.93rem, -0.14rem);
+  transform: translate(-7.78rem, -0.08rem);
   opacity: 0;
-  margin-left: 0.9rem;
+  margin-left: 1.048rem;
 }
 
 #dot1:checked ~ #nav1,
@@ -91,4 +104,31 @@ input {
 #dot2:checked ~ .content#meme4,
 #dot1:checked ~ .content#meme5 {
   display: flex;
+}
+
+@media screen and (max-width: 780px) {
+  .image__container {
+    max-width: 47rem;
+    min-width: 28rem;
+    height: 56vw;
+  }
+
+  .content {
+    gap: 4rem;
+  }
+
+  .slider__content {
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    transform: translate(0, -2.1rem);
+  }
+
+  .nav__dot {
+    transform: translate(-4rem, 62.5vw);
+  }
+
+  .dot {
+    transform: translate(3.22rem, 62.6vw);
+  }
 }
